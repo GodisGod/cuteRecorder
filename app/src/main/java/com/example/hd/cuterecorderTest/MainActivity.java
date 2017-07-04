@@ -62,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void tooShort() {
                 Log.i("HD", "tooShort");
+                tvOutputFile.setText("录音时间过短");
             }
 
             @Override

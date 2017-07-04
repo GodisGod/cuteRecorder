@@ -12,8 +12,6 @@ public class CuteRecorder implements AudioManger.AudioStateListener {
     private AudioManger audioManger;
     //is recording ?
     private boolean isRecording = false;
-    //is too short ?
-    private boolean tooShort = false;
 
     private int time = 0;
     private Handler handler;
@@ -59,7 +57,6 @@ public class CuteRecorder implements AudioManger.AudioStateListener {
     public void wellPrepared() {
         isRecording = false;
         time = 0;
-        tooShort = false;
         isPrepared = true;
     }
 
@@ -74,7 +71,7 @@ public class CuteRecorder implements AudioManger.AudioStateListener {
 
     //结束录制
     public void stop() {
-        if (time <= 3) {
+        if (time <= MIN_TIME) {
             audioRecordListener.tooShort();
         } else {
             audioRecordListener.finish(time, audioManger.getCurrentFilePath());
@@ -88,7 +85,6 @@ public class CuteRecorder implements AudioManger.AudioStateListener {
     private void reset() {
         isRecording = false;
         time = 0;
-        tooShort = false;
 
         handler.removeCallbacks(runnable);
     }
