@@ -55,4 +55,21 @@ ex:
               //根据传入的最大音量计算出的当前音量
             }
         });
+	
+	  开始录音： recorder.start();
+  	  结束录音： recorder.stop();
+	
+####一些其他的api
 
+```
+    //是否已经准备好录音
+    public boolean isPrepared();
+    //获取输出文件路径
+    public String getOutputDirPath();
+    //获取最大录制时间
+    public int getMaxTime();
+    //获取最小录制时间
+    public int getMinTime();
+    //获取最大音量
+    public int getVoiceLevel();
+```
