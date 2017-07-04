@@ -19,7 +19,10 @@ Add it in your root build.gradle at the end of repositories:
 	        compile 'com.github.GodisGod:cuteRecorder:v1.0.0'
 	}
   
-  
+add permission in manifest:
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+  
 ex:
 
         private CuteRecorder recorder;   //构建对象
