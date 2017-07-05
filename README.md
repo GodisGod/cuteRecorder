@@ -59,6 +59,11 @@ ex:
         });
 	
 	  开始录音： recorder.start();
+	  注意调用start需要先判断系统是否准备好开始录音:
+
+                if (recorder.isPrepared()) {
+                    recorder.start();
+                }
   	  结束录音： recorder.stop();
 	
 ####一些其他的api
